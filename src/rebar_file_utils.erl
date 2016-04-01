@@ -198,7 +198,7 @@ delete_each([File | Rest]) ->
     end.
 
 write_file_if_contents_differ(Filename, Bytes) ->
-    ToWrite = iolist_to_binary(Bytes),
+    ToWrite = unicode:characters_to_binary(Bytes),
     case file:read_file(Filename) of
         {ok, ToWrite} ->
             ok;

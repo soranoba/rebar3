@@ -118,7 +118,7 @@ preprocess(State, AppInfo, AppSrcFile) ->
             A3 = ensure_registered(A2),
 
             %% Build the final spec as a string
-            Spec = io_lib:format("~p.\n", [{application, AppName, A3}]),
+            Spec = io_lib:format("~tp.\n", [{application, AppName, A3}]),
 
             %% Setup file .app filename and write new contents
             EbinDir = rebar_app_info:ebin_dir(AppInfo),
